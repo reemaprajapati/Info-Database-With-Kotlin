@@ -2,7 +2,7 @@ package com.example.reema.kotlindemo.database
 
 import android.arch.persistence.room.RoomDatabase
 import android.arch.persistence.room.Database
-import com.example.reema.kotlindemo.InfoDao
+import com.example.reema.kotlindemo.dao.InfoDao
 import com.example.reema.kotlindemo.entity.Info
 
 

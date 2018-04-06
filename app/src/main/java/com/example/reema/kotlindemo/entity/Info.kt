@@ -22,8 +22,8 @@ public class Info {
     @ColumnInfo(name = "file_path")
     var file_path = ""
 
-    constructor(person_id: Int, name: String, address: String, file_path: String) {
-        this.person_id = person_id
+    constructor(name: String, address: String, file_path: String) {
+//        this.person_id = person_id
         this.name = name
         this.address = address
         this.file_path = file_path

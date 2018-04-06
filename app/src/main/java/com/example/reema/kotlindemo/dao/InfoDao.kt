@@ -1,4 +1,4 @@
-package com.example.reema.kotlindemo
+package com.example.reema.kotlindemo.dao
 
 import android.arch.lifecycle.LiveData
 import android.arch.persistence.room.*
