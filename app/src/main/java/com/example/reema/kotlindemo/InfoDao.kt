@@ -1,9 +1,7 @@
 package com.example.reema.kotlindemo
 
-import android.arch.lifecycle.LiveData
 import android.arch.persistence.room.*
 import com.example.reema.kotlindemo.entity.Info
-import java.util.*
 
 /**
  * Created by reema on 4/5/18.
@@ -11,10 +9,10 @@ import java.util.*
 @Dao
 interface InfoDao {
     @Query("SELECT * from info")
-    fun getAll() :LiveData<List<Info>>
+    fun getAll(): List<Info>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertInfo(info : Info)
+    fun insertInfo(info: Info)
 
     @Delete
     fun deleteInfo(info: Info)
