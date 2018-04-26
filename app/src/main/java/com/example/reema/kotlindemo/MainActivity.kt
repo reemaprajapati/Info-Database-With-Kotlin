@@ -12,6 +12,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import com.bumptech.glide.Glide
 import com.example.reema.kotlindemo.database.InfoDatabase
 import com.example.reema.kotlindemo.databinding.ActivityMainBinding
 import com.example.reema.kotlindemo.entity.Info
@@ -19,7 +20,7 @@ import com.facebook.stetho.Stetho
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.view.*
 import kotlinx.android.synthetic.main.layout_bottom_sheet.view.*
-import InfoListAdapter
+import com.example.reema.kotlindemo.adapter.InfoListAdapter
 
 
 
@@ -62,6 +63,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             address = view.text_address.text.toString()
             infoDatabase.daoAccess().insertInfo(Info(name, address, imageUri))
             dialog.dismiss()
+            getData()
         }
     }
 
@@ -91,9 +93,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == RESULT_OK) {
             if (requestCode == 1) {
-                var currImageURI: Uri = data!!.getData()
-                imageUri = currImageURI.toString()
+                var currentImage : Uri = data!!.data
+                imageUri = currentImage.toString()
             }
+            setImage()
         }
     }
 
@@ -108,7 +111,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 //    }
 
        fun getData(){
-//           infoDatabase.daoAccess().getAll()
-           adapter.swapData(infoDatabase.daoAccess().getAll())
+           adapter.setData(infoDatabase.daoAccess().getAll())
        }
+
+    fun setImage(){
+        Glide.with(this).load(Uri.parse(imageUri)).into(view.image_preview)
+    }
 }

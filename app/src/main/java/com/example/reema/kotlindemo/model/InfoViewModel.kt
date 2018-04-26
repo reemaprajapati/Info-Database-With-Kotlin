@@ -21,4 +21,9 @@ class InfoViewModel : BaseObservable() {
         return info.address
     }
 
+    @Bindable
+    fun getImagePath(): String{
+        return info.file_path
+    }
+
 }

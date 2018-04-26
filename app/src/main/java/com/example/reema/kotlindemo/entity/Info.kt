@@ -8,23 +8,9 @@ import android.arch.persistence.room.PrimaryKey;
  * Created by reema on 4/5/18.
  */
 @Entity(tableName = "info")
-public class Info {
+data class Info(@ColumnInfo(name = "name") var name: String, @ColumnInfo(name = "address") var address: String, @ColumnInfo(name = "file_path") var file_path: String) {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "person_id")
     var person_id: Int = 0
 
-    @ColumnInfo(name = "name")
-    var name: String = ""
-
-    @ColumnInfo(name = "address")
-    var address: String = ""
-
-    @ColumnInfo(name = "file_path")
-    var file_path = ""
-
-    constructor( name: String, address: String, file_path: String) {
-        this.name = name
-        this.address = address
-        this.file_path = file_path
-    }
 }

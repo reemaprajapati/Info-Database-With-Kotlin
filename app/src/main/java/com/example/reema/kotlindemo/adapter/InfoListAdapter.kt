@@ -1,4 +1,5 @@
-import InfoListAdapter.InfoViewHolder
+package com.example.reema.kotlindemo.adapter
+
 import android.content.Context
 import android.databinding.DataBindingUtil
 import android.support.v7.widget.RecyclerView
@@ -15,20 +16,20 @@ import java.util.*
 /**
  * Created by reema on 4/20/18.
  */
-class InfoListAdapter(var context: Context) : RecyclerView.Adapter<InfoViewHolder>() {
+class InfoListAdapter(var context: Context) : RecyclerView.Adapter<InfoListAdapter.InfoViewHolder>() {
 
     private var data: List<Info> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InfoViewHolder {
         val binding: ItemInfoListBinding = DataBindingUtil.inflate(LayoutInflater.from(context), R.layout.item_info_list, parent, false);
-        return InfoViewHolder(binding);
+        return InfoViewHolder(binding)
     }
 
     override fun getItemCount() = data.size
 
     override fun onBindViewHolder(holder: InfoViewHolder, position: Int) = holder.setViewModel(data[position])
 
-    fun swapData(data: List<Info>) {
+    fun setData(data: List<Info>) {
         this.data = data
         notifyDataSetChanged()
     }
