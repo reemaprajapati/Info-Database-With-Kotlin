@@ -2,7 +2,7 @@ package com.example.reema.kotlindemo.model
 
 import android.databinding.BaseObservable
 import android.databinding.Bindable
-import com.example.reema.kotlindemo.entity.Info
+import com.example.reema.kotlindemo.data.entity.Info
 
 /**
  * Created by reema on 4/20/18.
