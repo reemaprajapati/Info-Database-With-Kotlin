@@ -57,4 +57,8 @@ dependencies {
     compile Libraries.dagger
     compile Libraries.dagger_support // if you use the support libraries
     annotationProcessor Libraries.dagger_android_processor
+    compile Libraries.retrofit
+    compile Libraries.gson
+    implementation Libraries.logginginterceptor
+
 }

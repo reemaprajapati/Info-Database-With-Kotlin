@@ -24,6 +24,8 @@ object Versions {
     val compile_sdk = 27
     val min = 17
     val target_sdk = 27
+    val retrofit = "2.4.0"
+    val logging_interceptor= "3.8.0"
 }
 
 object Libraries {
@@ -38,6 +40,10 @@ object Libraries {
     val dagger = "com.google.dagger:dagger-android:${Versions.dagger}"
     val dagger_support = "com.google.dagger:dagger-android-support:${Versions.dagger}" // if you use the support libraries
     val dagger_android_processor = "com.google.dagger:dagger-android-processor:${Versions.dagger}"
+    val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    val gson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
+    val logginginterceptor= "com.squareup.okhttp3:logging-interceptor:${Versions.logging_interceptor}"
+
 }
 
 object SupportLibraries {
